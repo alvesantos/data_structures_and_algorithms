@@ -150,3 +150,22 @@ Implement the `add_to_head` method. It should add a new node to the front of the
 2. Update the head reference to the given node.
 
 [Go to Code](./CH9_L6_add_to_head/main.py)
+
+# Linked List Queue
+
+To use our Linked List as a fast queue (`O(1) pushes and pops`) we need our `add_to_tail` function to be `O(1)`. Currently, it iterates over the entire list before appending an item. We can fix this by keeping track of the last item with a new data member: `tail`.
+
+Node: It's common in algorithms to make this kind of trade-off. By using a litle extra memory (keeping track of `tail`), we can make our operations faster. Sometimes you might need to go the other way, and use more computation time to save memory.
+
+## Assignment
+
+LockedIn's queue was working just fine on small datasets, but appending items once the lsit has 100,000+ items has started to take a toll on our servers. Implement these changes to speed up our Linked List's inserts to `O(1)`:
+
+1. Update the constructor to `self.tail` to `None`.
+2. Update `add_to_head` to also set the `tail` reference to the given node if the list is empty.
+3. Update `add_to_tail`:
+   1. Set the head and tail to the given node if the list empty.
+   2. Instead of iterating through the list to find the last node, use the `tail` node to append the new node (for example, set `self.tail.next` to the new node).
+   3. Update the `tail` reference to new node.
+
+[Go to Code](./CH9_L7_linked_list_queue/main.py)
