@@ -169,3 +169,27 @@ LockedIn's queue was working just fine on small datasets, but appending items on
    3. Update the `tail` reference to new node.
 
 [Go to Code](./CH9_L7_linked_list_queue/main.py)
+
+# Remove from Head
+
+We're one method away from having a fully functioning `O(1)` Queue! We just need a way to remove the first element from the linked list in constant time. When we're finished, our `LinkedList` will fulfill the basic requirements of a Queue:
+
+- `add_to_tail`: Constant time insert
+- `remove_from_head`: Constant time pop
+
+Let's rename the `LinkedList` class to `LLQueue` and remove the `add_to_head` functionality because Queues don't allow inserting into the wrong end.
+
+We've also flipped the arrows in the printed representation to reflect the change.
+
+## Assignment
+
+Complete the `remove_from_head` method. It should remove the first node from the list (the head) and return it.
+
+1. If the list is empty, just return None.
+2. Assign the head to be removed to a variable.
+3. Set the list's head to the next node in the list.
+4. If the list became empty, set th list's tail to `None`.
+5. Set the (now removed) head's `next` to `None`. We don't want it to point do any node in the list.
+6. Return the removed head.
+
+[Go to code](CH9_L8_remove_from_head/main.py)
