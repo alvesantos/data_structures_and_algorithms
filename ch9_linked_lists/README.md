@@ -121,3 +121,19 @@ for node in ll:
 ```
 
 [Go to the code](CH9_L4_iterating.py/main.py)
+
+# Add to Tail
+
+Time to allow our `LinkedList` to add new nodes to the end of the list. Kind of like a regular Python List's `.append` method.
+
+## Assignment
+
+Complete the `add_to_tail` method. It adds a new node to the end of the list and returns nothing.
+
+1. If the isn't a `head` node, set the new node as the `head` and return.
+2. Otherwise, keep a reference to the "last" node in the list - start with it set to the `head`.
+3. Iterate over the linked list (you can use a `for` loop now that you've added your own `__iter__`!)
+   - Update your "last" node reference to the current node
+4. Once you've iterated over the entire list. your "last" reference should be the last node in the list (the "tail"). Set the `next` field of the "last" node to the new node.
+
+[Go to Code](./CH9_L5_add_to_tail/main.py)
