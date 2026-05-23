@@ -137,3 +137,16 @@ Complete the `add_to_tail` method. It adds a new node to the end of the list and
 4. Once you've iterated over the entire list. your "last" reference should be the last node in the list (the "tail"). Set the `next` field of the "last" node to the new node.
 
 [Go to Code](./CH9_L5_add_to_tail/main.py)
+
+# Add to Head
+
+For added flexibility, let's allow users to add items to the front of our linked list as well.
+
+## Assignment
+
+Implement the `dd_to_head` method. It should add a new node to the front of the list and return nothing.
+
+1. Set the "next" field fo the given node to the current head node.
+2. Update the head reference to the given node.
+
+[Go to Code](./CH9_L6_add_to_head/main.py)
