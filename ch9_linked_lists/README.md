@@ -144,7 +144,7 @@ For added flexibility, let's allow users to add items to the front of our linked
 
 ## Assignment
 
-Implement the `dd_to_head` method. It should add a new node to the front of the list and return nothing.
+Implement the `add_to_head` method. It should add a new node to the front of the list and return nothing.
 
 1. Set the "next" field fo the given node to the current head node.
 2. Update the head reference to the given node.
