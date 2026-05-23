@@ -1,8 +1,20 @@
 from node import Node
 
+
 class LinkedList:
     def add_to_tail(self, node):
-        pass
+        if not self.head:
+            self.head = node
+            return
+
+        last_node_viewed = self.head
+
+        for current_node in self:
+            last_node_viewed = current_node
+
+        last_node_viewed.set_next(node)
+
+        
 
     # don't touch below this line
 
