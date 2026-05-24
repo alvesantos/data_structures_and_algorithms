@@ -5,4 +5,25 @@ class BSTNode:
         self.val = val
 
     def insert(self, val):
-        pass
+        if not self.val:
+            self.val = val
+            return 
+        
+        if self.val == val:
+            return
+
+        if self.val > val and not self.left:
+            self.left = BSTNode(val)
+            return
+
+        if self.val > val and self.left:
+            self.left.insert(val)
+            return
+
+        if self.val < val and not self.right:
+            self.right = BSTNode(val)
+            return
+
+        if self.val < val and self.right:
+            self.right.insert(val)
+            return
