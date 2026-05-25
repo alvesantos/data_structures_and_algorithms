@@ -1,9 +1,18 @@
 class BSTNode:
     def get_min(self):
-        pass
+        current = self
 
+        while current.left:
+            current = current.left
+
+        return current.val
     def get_max(self):
-        pass
+        current = self
+
+        while current.right:
+            current = current.right
+
+        return current.val
 
     # don't touch below this line
 
