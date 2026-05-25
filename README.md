@@ -24,3 +24,22 @@ Inserting into a binary search tree (like most of its operations) is very fast. 
 It only required one comparison for each level of thre tree, making it `O(log(n))`! (At least in a balanced tree, we'll tal about this later).
 
 Order `log(n)` is very fast - it's practically as good as `O(1)` in most cases. If our tree has `1,000,000` nodes, we only need to make `20` comparisons to find the right spot for a new node. If our tree is 2x larger (`2,000,000` nodes), we only need to make one more comparison per insert, `21` total.
+
+# Min and Max
+
+Some of the simpler BST algorithms are the `get_min` and `get_max` methods.
+
+## Assignment
+
+Now that we can add users to our BST, our systems team wants us to start implementing search functionality.
+
+Implement the `get_min` and `get_max` methods. They should return the minimum and maximum values in the BST respectively.
+
+### Tips
+
+- the `get_min` function loops through all the `left` child nodes and returns the value of the last one.
+
+- the `get_max` function does the same for the right children.
+
+[Go To Code](ch10_binary_trees/CH10_L7_min_and_max/main.py)
+
