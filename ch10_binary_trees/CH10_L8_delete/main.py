@@ -1,8 +1,37 @@
 from typing import Any
 
+
 class BSTNode:
     def delete(self, val: Any) -> "BSTNode | None":
-        pass
+        if self.val is None:
+            return None
+
+        if val < self.val:
+            if self.left:
+                removed_node = self.left.delete(val)
+                self.left = removed_node
+            return self
+
+        if val > self.val:
+            if self.right:
+                removed_node = self.right.delete(val)
+                self.right = removed_node
+            return self
+
+        if val == self.val:
+            if self.right is None:
+                return self.left
+
+            if self.left is None:
+                return self.right
+
+            min_size_right = self.right.get_min()
+
+            self.val = min_size_right
+
+            self.right = self.right.delete(min_size_right)
+
+            return self
 
     # don't touch below this line
 
