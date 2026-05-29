@@ -69,4 +69,48 @@ Complete the `insert` method of the `BSTNode` class. It takes a `User` object as
 
 I'd highly recommend using pencil/paper or some kind of drawing tool to visualize the tree as you go through the assignments in this chapter.
 
-[Go to code]()
+# Delete
+
+We also need a way to remove users from our BST if a user decides to delete their account.
+
+## Assignment
+
+Implement the recursive delete method. It takes a value as an input and deletes the node with that value if it exists. Each call `return` the new root of the three (or subtree) after the deletion.
+
+Notice that in the test suite the `delete` method is called like this:
+
+```py
+bst = bst.delete(character)
+```
+
+1. Check if the current node is empty (has no value). If it is, return `None`. This represents an empty tree or a leaf node where deletion has already occured.
+
+2. If the value to delete is less than the current node's value:
+   1. If there's a left child, recursively delete the value from the left subtree and update the left child reference with the result.
+   
+   2. Return the current node.
+
+3. If the value to delete is greater than the current node's value:
+   1. If there's a right child, recursively delete the value from the right subtree and update the right child reference with the result.
+
+   2. Return the current node.
+
+4. If the value to delete equals the current node's value, we've found the node to delete:
+   1. If there is no right child, return the left child. This bypasses the current node, effectively deleting it.
+
+   2. If there is no left child, return the right child, accomplishing the same thing.
+
+   3. If there are both left and right children:
+      1. Start at the right child.
+
+      2. Walk left until you find the smallest node in that right subtree. This is the next-largest value after the current node's value.
+
+      3. Copy the next largest value into the current node's value.
+
+      4. Delete that successor value from the right subtree.
+
+      5. Call delete on the right subtree for that successor value, then save the returned node as the right child.
+
+      6. Return the current node.
+
+[Go to Code](CH10_L8_delete/main.py)
