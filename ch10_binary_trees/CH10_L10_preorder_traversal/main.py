@@ -3,7 +3,16 @@ from typing import Any
 
 class BSTNode:
     def preorder(self, visited: list[Any]) -> list[Any]:
-        pass
+        if self.val is not None:
+            visited.append(self.val)
+
+        if self.left is not None:
+            self.left.preorder(visited)
+
+        if self.right is not None:
+            self.right.preorder(visited)
+
+        return visited
 
     # don't touch below this line
 
