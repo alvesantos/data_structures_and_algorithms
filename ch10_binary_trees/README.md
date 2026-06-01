@@ -114,3 +114,33 @@ bst = bst.delete(character)
       6. Return the current node.
 
 [Go to Code](CH10_L8_delete/main.py)
+
+# Postorder Traversal
+
+A "postorder" traversal also visits all the nodes in a tree. It's called "postorder" because the current node is visited after its children. The following tree:
+
+```
+    > 7
+        > 6
+> 4
+    > 2
+        > 1
+```
+
+Would be visited in this order
+
+```
+[1, 2, 6, 7, 4]
+```
+
+## Assignment
+Our data team didn't like the way we ordered the users in our BST export (personally I think they just want to kick the work for themselves down the road). Anyhow, we've been asked to change it.
+
+**Implement the recursive `postorder` method**. Here are the algorithm's steps:
+
+1. Recursively traverse the left subtree
+2. Recursively traverse the right subtree
+3. Visit the value of the current node by appending its value to the visited array
+4. Return array of visited nodes
+
+[Go to Code]()
