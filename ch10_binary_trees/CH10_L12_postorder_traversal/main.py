@@ -2,7 +2,17 @@ from typing import Any
 
 class BSTNode:
     def postorder(self, visited: list[Any]) -> list[Any]:
-        pass
+        if self.left:
+            self.left.postorder(visited)
+        
+        if self.right:
+            self.right.postorder(visited)
+        
+        if self.val is not None:
+            visited.append(self.val)
+        
+        return visited
+
 
     # don't touch below this line
 
